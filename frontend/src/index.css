@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-slate-50 text-black antialiased;
+  }
+  ::selection { @apply bg-navy-200; }
+}
+
+@layer components {
+  .input-base {
+    @apply block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-black
+           placeholder:text-slate-400 transition
+           focus:border-navy-600 focus:outline-none focus:ring-2 focus:ring-navy-600/25
+           disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500;
+  }
+  .input-error { @apply border-red-500 focus:border-red-500 focus:ring-red-500/25; }
+}
